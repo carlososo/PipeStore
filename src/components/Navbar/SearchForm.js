@@ -14,7 +14,7 @@ export const SearchForm = () => {
     product: ''
   });
   const {product}= value;
-  console.log(typeof product)
+  
 
 
   const handleSubmit = (e) => {
@@ -33,7 +33,7 @@ export const SearchForm = () => {
   
   return (
     <form className="form-inline form-width " onSubmit={handleSubmit}>
-      <div className="bg-custom-light form-group col-12 rounded">
+      <div className="bg-custom-light form-group col-lg-12 rounded">
         <input
           className="form-control col-11  custom-bg-light borders-right input-custom"
           type="search"

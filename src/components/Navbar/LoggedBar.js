@@ -1,33 +1,33 @@
 import React, { useEffect, useState } from "react";
+
 import { NavLink } from "react-router-dom";
 import { SearchForm } from "./SearchForm";
+import fetchData from "../../utils/fetchData";
+import NavBarSelector from "../../HOC/NavBarSelector";
+
 
 import "../../index.scss";
 import MeetingRoomTwoToneIcon from "@material-ui/icons/MeetingRoomTwoTone";
 import AccountCircleTwoToneIcon from "@material-ui/icons/AccountCircleTwoTone";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
-import fetchData from "../../utils/fetchData";
+import usePayload from "../../utils/usePayload";
 
-const NavBar = () => {
-  const [user, setUser] =useState();
+const LoggedBar = () => {
+    const payload =usePayload()
+    const [flag, setFlag]= useState(false)
     
-  useEffect(() => {
-    const token = localStorage.getItem('tkn');
-    if(token){
-        fetchData.get("/api/v1/user/me",{
-            headers:{
-                Authorization: `JWT ${token}`
-            }
-        }).then(({data}) =>{
-            const {user} = data;
-            setUser(user)
-            
-        })
-        }
-  }, [])
+    useEffect(()=>{
+        console.log(payload);
+        setFlag(!flag);
+    },[])
+    
+    const token = localStorage.getItem("tkn")
+    
 
-  console.log(user)
-    return (
+
+    
+
+  return (
     <nav className="navbar-expand-md navbar-dark bg-custom-blue mb-5">
       {/* <Link className="navbar-brand" to="/">
         Pipe'Store
@@ -60,22 +60,14 @@ const NavBar = () => {
         </div>
         <ul className="navbar-nav ml-5">
           <li className="nav-item " title="Login">
-            {user?(<NavLink
+            <NavLink
               activeClassName="selected"
               className="nav-link "
               to="/logout"
             >
               <AccountCircleTwoToneIcon title="Login" className="ml-1" />
               <small>Logout</small>
-            </NavLink>):
-            (<NavLink
-              activeClassName="selected"
-              className="nav-link "
-              to="/login"
-            >
-              <AccountCircleTwoToneIcon title="Login" className="ml-1" />
-              <small>Login</small>
-            </NavLink>)}
+            </NavLink>
           </li>
           <li className="nav-item">
             <NavLink
@@ -84,7 +76,7 @@ const NavBar = () => {
               to="/signup"
             >
               <MeetingRoomTwoToneIcon title="SignUp" className="ml-2" />
-              <small>Signup</small>
+              <small>{payload?.first_name}</small>
             </NavLink>
           </li>
           <li className="nav-item">
@@ -103,4 +95,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default NavBarSelector (LoggedBar);
