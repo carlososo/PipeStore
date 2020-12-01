@@ -1,7 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { useForm } from "../hooks/useForm";
-import fetchData from "../utils/fetchData";
+import usePost from "../hooks/usePost";
 
 
 
@@ -15,17 +15,13 @@ const Login = () => {
     password:""
     })
 
+    const {submitLogin}=usePost("/api/v1/login")
+
     const {email, password} = value;
 
     const  handleSubmit = async (e)=>{
         e.preventDefault();
-        const {data} = await fetchData.post(`/api/v1/login`, value)
-        const {token} = data;
-        localStorage.setItem("tkn", token)
-        reset();
-        setTimeout(()=>{
-            history.replace("/");
-        },600)
+      submitLogin(value, reset, history)
     }
 
 

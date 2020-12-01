@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import useFetch from "../hooks/useFetch";
-import Card from "../components/Card";
+
 import queryString from "query-string";
+import NavBar from "../components/Navbar";
+import ContentLoader from "../components/ContentLoader";
+import { useLocation } from "react-router-dom";
 
 import "../index.scss";
-import { useLocation } from "react-router-dom";
-// import LoggedBar from "../components/Navbar/LoggedBar";
-import NavBar from "../components/Navbar";
 
 const Home = () => {
   const location = useLocation();
@@ -22,23 +22,12 @@ const Home = () => {
     setSearch(filterSearch);
   }, [q]);
 
-  //  console.log(products)
-
   return (
     <div>
       <NavBar />
-      {products.length === 0 ? (
-        <div class="ui segment">
-        <div class="ui active inverted dimmer">
-          <div class="ui large text loader">Loading</div>
-        </div>
-        <p></p>
-        <p></p>
-        <p></p>
-      </div>
-      ) : (
-        <>
-          <div className="container-custom">
+      
+        <ContentLoader search={search} products={products}/>
+          {/* <div className="container-custom">
             <h1 className="display-3 text-center">
               Chek out our product Variety{" "}
             </h1>
@@ -54,9 +43,8 @@ const Home = () => {
                 Check out out categories!
               </h3>
             </div>
-          </div>
-        </>
-      )}
+          </div> */}
+      )
     </div>
   );
 };
