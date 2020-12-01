@@ -5,11 +5,13 @@ import InputCounter from "../components/InputCounter/";
 import TitleHeart from "../components/TitleIcon/";
 import Stepper from '../components/Stepper'
 import { useParams } from "react-router-dom";
+import NavBar from "../components/Navbar";
 
 const Product = () => {
   
   const {productId} =useParams()
   const [selectedProduct, setSelectedProduct] = useState({});
+  
   
   useEffect(() => {
     const handleSelectedProduct = async () => {
@@ -22,9 +24,10 @@ const Product = () => {
   }, [productId]);
 
   
-
-  
   return (
+    <div>
+      <NavBar toProduct="/product" />
+    
     <div className="container-custom ">
       <div className="mb-5">
         <Stepper selectedProduct={selectedProduct}/>
@@ -56,6 +59,7 @@ const Product = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

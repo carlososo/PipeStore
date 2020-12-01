@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import useCounter from "../../hooks/useCounter";
 import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
+import { UserContext } from "../../context/UserContext";
+
 
 const InputCounter = () => {
+  const {isLogged} =useContext(UserContext);
+  console.log(isLogged)
   const { counter, setCounter, increment, decrement } = useCounter(1);
   return (
     <div className="container ">
@@ -32,7 +36,7 @@ const InputCounter = () => {
               <AddIcon/>
             </div>
           </div>
-          <button className="boton-verde">Agregar</button>
+          {isLogged &&<button className="boton-verde" >Agregar</button>}
         </div>
       </form>
     </div>

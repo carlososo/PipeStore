@@ -9,7 +9,7 @@ const AppContext =()=>{
         product:''
     });
 
-    const [user, setUser] =useState({})
+    const [isLogged, setisLogged] =useState()
 
     return(
         <ProductContext.Provider value={{
@@ -18,7 +18,8 @@ const AppContext =()=>{
         }}
         >
             <UserContext.Provider value={{
-                user,setUser
+                isLogged,
+                setisLogged
             }}>
             <AppRouter/>
             </UserContext.Provider>

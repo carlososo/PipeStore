@@ -2,6 +2,7 @@ import React from 'react'
 import HomeIcon from '@material-ui/icons/Home';
 import ToysIcon from '@material-ui/icons/Toys';
 import LocalGroceryStoreIcon from '@material-ui/icons/LocalGroceryStore';
+import { Link } from 'react-router-dom';
 
 const Stepper = ({selectedProduct}) => {
     const {category, product_name}= selectedProduct
@@ -9,10 +10,10 @@ const Stepper = ({selectedProduct}) => {
         <div className="ui mini steps">
         <div className="step">
           <HomeIcon fontSize="large"/>
-          <div className="ml-1 content">
+          <Link to="/" className="ml-1 content">
             <div className="title">Home</div>
             <div className="description">Go Back home</div>
-          </div>
+          </Link>
         </div>
         <div className="active step">
           <ToysIcon fontSize="large"/>

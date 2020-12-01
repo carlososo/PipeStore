@@ -1,6 +1,7 @@
 import React from 'react';
 
-const LoaderHOC=(WrappedComponent)=>{
+const Loader=(WrappedComponent)=>{
+
 
     const Component=(props)=>{
         console.log(props)
@@ -9,4 +10,5 @@ const LoaderHOC=(WrappedComponent)=>{
     }
     return Component;
 }
-export default LoaderHOC
+export default Loader;
+

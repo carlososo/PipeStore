@@ -1,18 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { SearchForm } from "./SearchForm";
+import fetchData from "../../utils/fetchData";
+import RightBar from "./RightBar";
+import LoggedRightBar from './LoggedRightBar';
+import { UserContext } from "../../context/UserContext";
 
 import "../../index.scss";
-import MeetingRoomTwoToneIcon from "@material-ui/icons/MeetingRoomTwoTone";
-import AccountCircleTwoToneIcon from "@material-ui/icons/AccountCircleTwoTone";
-import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
-import fetchData from "../../utils/fetchData";
 
 const NavBar = () => {
+  
   const [user, setUser] =useState();
-    
+  const { setisLogged} =useContext(UserContext)  
+  const token = localStorage.getItem('tkn');
   useEffect(() => {
-    const token = localStorage.getItem('tkn');
+    
     if(token){
         fetchData.get("/api/v1/user/me",{
             headers:{
@@ -20,31 +22,21 @@ const NavBar = () => {
             }
         }).then(({data}) =>{
             const {user} = data;
-            setUser(user)
-            
+            setUser(user);
         })
         }
   }, [])
-
-  console.log(user)
+  useEffect(()=>{
+    if(token){
+      setisLogged(true);
+    }else{
+      setisLogged(false);
+    }
+  },[token])
+  
     return (
     <nav className="navbar-expand-md navbar-dark bg-custom-blue mb-5">
-      {/* <Link className="navbar-brand" to="/">
-        Pipe'Store
-      </Link>
-      <button
-        className="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span className="navbar-toggler-icon"></span>
-      </button> */}
-
-      <div
+     <div
         className="collapse navbar-collapse container-custom "
         id="navbarSupportedContent"
       >
@@ -58,46 +50,8 @@ const NavBar = () => {
         <div className="col-8">
           <SearchForm />
         </div>
-        <ul className="navbar-nav ml-5">
-          <li className="nav-item " title="Login">
-            {user?(<NavLink
-              activeClassName="selected"
-              className="nav-link "
-              to="/logout"
-            >
-              <AccountCircleTwoToneIcon title="Login" className="ml-1" />
-              <small>Logout</small>
-            </NavLink>):
-            (<NavLink
-              activeClassName="selected"
-              className="nav-link "
-              to="/login"
-            >
-              <AccountCircleTwoToneIcon title="Login" className="ml-1" />
-              <small>Login</small>
-            </NavLink>)}
-          </li>
-          <li className="nav-item">
-            <NavLink
-              activeClassName="selected"
-              className="nav-link"
-              to="/signup"
-            >
-              <MeetingRoomTwoToneIcon title="SignUp" className="ml-2" />
-              <small>Signup</small>
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink
-              activeClassName="selected"
-              className="nav-link"
-              to="/checkout"
-            >
-              <ShoppingCartIcon title="Shopping Cart" />
-              <small>Cart</small>
-            </NavLink>
-          </li>
-        </ul>
+        {user ?<LoggedRightBar user={user} setisLogged={setisLogged}/>:<RightBar />}
+        
       </div>
     </nav>
   );

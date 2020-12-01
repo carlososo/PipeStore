@@ -27,19 +27,36 @@ const Home = () => {
   return (
     <div>
       <NavBar />
-      <div className="container-custom">
-        <h1 className="display-3 text-center">Chek out our product Variety </h1>
-        <div className="row">
-          {search.length === 0 ? (
-            <Card products={products} />
-          ) : (
-            <Card products={search} />
-          )}
+      {products.length === 0 ? (
+        <div class="ui segment">
+        <div class="ui active inverted dimmer">
+          <div class="ui large text loader">Loading</div>
         </div>
-        <div>
-          <h3 className="display-4 text-center">Check out out categories!</h3>
-        </div>
+        <p></p>
+        <p></p>
+        <p></p>
       </div>
+      ) : (
+        <>
+          <div className="container-custom">
+            <h1 className="display-3 text-center">
+              Chek out our product Variety{" "}
+            </h1>
+            <div className="row">
+              {search.length === 0 ? (
+                <Card products={products} />
+              ) : (
+                <Card products={search} />
+              )}
+            </div>
+            <div>
+              <h3 className="display-4 text-center">
+                Check out out categories!
+              </h3>
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 };
