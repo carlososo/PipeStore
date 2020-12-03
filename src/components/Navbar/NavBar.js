@@ -29,8 +29,7 @@ const NavBar = () => {
   useEffect(()=>{
     if(token){
       setisLogged(true);
-    }else{
-      setisLogged(false);
+    }else{      setisLogged(false);
     }
   },[token])
   

@@ -9,13 +9,8 @@ import {
 import { ChangeInfo } from "../views/ChangeInfo";
 import { CheckInfo } from "../views/CheckInfo";
 import { Favorites } from "../views/Favorites";
-import Home from "../views/Home";
 import { Welcome } from "../views/Welcome";
 import AppRouter from "./AppRouter";
-
-const BackHome = () => {
-  return <Redirect to="/" />;
-};
 
 const ProfileRouter = () => {
   const {pathname} =useLocation()
