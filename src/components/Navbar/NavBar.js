@@ -26,14 +26,6 @@ const NavBar = () => {
         })
         }
   }, [token])
-  // useEffect(()=>{
-  //   if(token){
-  //     setisLogged(true);
-  //   }else{
-  //     setisLogged(false);
-  //   }
-  // },[token])
-  
     return (
     <nav className="navbar-expand-md navbar-dark bg-custom-blue mb-5">
      <div
