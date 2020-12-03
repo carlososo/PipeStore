@@ -1,7 +1,7 @@
 import React from 'react'
 import SideBar from '../components/SideBar'
 
-export const Welcome = ({pathname}) => {
+export const Favorites = ({pathname}) => {
     
     console.log(pathname)
     return (
