@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-d
 import Home from "../views/Home";
 import Login from "../views/Login";
 import Product from "../views/Product";
+import Profile from "../views/Profile";
 import Signup from "../views/Signup";
 
 const AppRouter = () => {
@@ -24,6 +25,8 @@ const AppRouter = () => {
             <Route exact path="/signup" component={Signup}/>
             <Route exact path="/login" component={Login}/>
             <Route exact path="/logout" component={Logout}/>
+            <Route exact path="/profile" component={Profile}/>
+            <Redirect to="/"/>
         </Switch>
       </div>
     </Router>
