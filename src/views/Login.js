@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import NavBar from "../components/Navbar";
 import { useForm } from "../hooks/useForm";
 import usePost from "../hooks/usePost";
 
@@ -9,27 +10,43 @@ import usePost from "../hooks/usePost";
 
 const Login = () => {
     const history = useHistory();
+    const [isValid, setIsValid]= useState(true);
 
     const [value, handleInputChange, reset]=useForm({
     email:"",
     password:""
     })
-
     const {submitLogin}=usePost("/api/v1/login")
 
     const {email, password} = value;
 
     const  handleSubmit = async (e)=>{
         e.preventDefault();
-      submitLogin(value, reset, history)
+      submitLogin(value, reset, history, setIsValid)
     }
 
+    const renderError=()=>{
+      if(!isValid){
+        return(
+          <div className="ui error message">
+            <div className="header">
+              <p>Something went Wrong</p>
+            </div>
+            <div className="content">
+              <p>Please check the information provided and try again!</p>
+            </div>
+          </div>
+        )
+      }
+    }
 
   return (
+    <>
+    <NavBar/>
     <div className="container">
       <h1 className=" text-center my-5">Log In</h1>
-      <div className="container ui huge form">
-        <form onSubmit={handleSubmit}>
+      <div className="container">
+        <form className="ui form huge error" onSubmit={handleSubmit}>
           <div className="two fields">
             <div className="field">
               <label htmlFor="">email:</label>
@@ -50,6 +67,7 @@ const Login = () => {
               />
             </div>
           </div>
+          {renderError()}
           <div className="text-right mt-5">
               <button className="boton-verde">
                   Submit
@@ -58,6 +76,7 @@ const Login = () => {
         </form>
       </div>
     </div>
+    </>
   );
 };
 export default Login;

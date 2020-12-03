@@ -5,18 +5,6 @@ const useFetch =(url,listener, initialState=[])=>{
 
     const [products, setProducts] = useState(initialState)
 
-
-    const submitSignUp =(value, reset, history)=>{
-        fetchData.post(url, value)
-        .then((response) => {
-            console.log(response);
-            reset();
-            setTimeout(() => {
-              history.push("/login");
-            }, 2000);
-          })
-          .catch((err) => console.log(err));
-    }
     
     useEffect(()=>{
         (async ()=>{
@@ -24,7 +12,7 @@ const useFetch =(url,listener, initialState=[])=>{
             setProducts(data);
         })();
     },[url, listener])
-    return {products, setProducts, submitSignUp};
+    return {products, setProducts};
 }
 
 export default useFetch;

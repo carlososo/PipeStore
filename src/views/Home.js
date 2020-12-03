@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import useFetch from "../hooks/useFetch";
-
+import fetchData from '../utils/fetchData';
 import queryString from "query-string";
 import NavBar from "../components/Navbar";
 import ContentLoader from "../components/ContentLoader";
@@ -16,10 +16,16 @@ const Home = () => {
   const [search, setSearch] = useState([]);
 
   useEffect(() => {
-    const filterSearch = products.filter(({ product_name }) => {
-      return product_name?.toLowerCase().includes(q || "");
-    });
-    setSearch(filterSearch);
+    const getSearch =async()=>{
+      const {data}= await fetchData("api/v1/item",{
+        params:{
+          name:q
+        }
+      })
+      setSearch(data);
+    }
+    getSearch();
+    
   }, [q]);
 
   return (
@@ -27,23 +33,6 @@ const Home = () => {
       <NavBar />
       
         <ContentLoader search={search} products={products}/>
-          {/* <div className="container-custom">
-            <h1 className="display-3 text-center">
-              Chek out our product Variety{" "}
-            </h1>
-            <div className="row">
-              {search.length === 0 ? (
-                <Card products={products} />
-              ) : (
-                <Card products={search} />
-              )}
-            </div>
-            <div>
-              <h3 className="display-4 text-center">
-                Check out out categories!
-              </h3>
-            </div>
-          </div> */}
       )
     </div>
   );

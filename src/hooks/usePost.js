@@ -2,14 +2,20 @@ import fetchData from '../utils/fetchData';
 
 const usePost =(url)=>{
 
-  const submitLogin = async(value, reset, history)=>{
+  const submitLogin = async(value, reset, history, setIsValid)=>{
+    try{
     const {data} = await fetchData.post(url, value);
     const {token} =data;
-    localStorage.setItem("tkn", token)
-    reset();
-    setTimeout(() => {
-      history.replace("/")
-    }, 500);
+      localStorage.setItem("tkn", token)
+      reset();
+      setTimeout(() => {
+        setIsValid(true);
+        history.replace("/")
+      }, 300);
+    } catch(err){
+      setIsValid(false);
+      console.log(err)
+    }
   }
 
    
