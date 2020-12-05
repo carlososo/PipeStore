@@ -6,7 +6,7 @@ export const ChangeInfo = ({pathname}) => {
     console.log(pathname)
     return (
         <div>
-            <SideBar pathname={pathname} />
+            <SideBar active="changeinfo" pathname={pathname} />
         </div>
     )
 }

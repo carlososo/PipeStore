@@ -6,7 +6,7 @@ export const Favorites = ({pathname}) => {
     console.log(pathname)
     return (
         <div>
-            <SideBar pathname={pathname} />
+            <SideBar active={"favorites"} pathname={pathname} />
         </div>
     )
 }

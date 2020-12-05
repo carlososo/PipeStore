@@ -14,7 +14,6 @@ import AppRouter from "./AppRouter";
 
 const ProfileRouter = () => {
   const {pathname} =useLocation()
-  console.log(pathname)
 
   return (
     
