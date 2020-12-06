@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
   Redirect,
@@ -6,6 +6,7 @@ import {
   Switch,
   useLocation,
 } from "react-router-dom";
+import fetchData from "../utils/fetchData";
 import { ChangeInfo } from "../views/ChangeInfo";
 import { CheckInfo } from "../views/CheckInfo";
 import { Favorites } from "../views/Favorites";
@@ -14,20 +15,40 @@ import AppRouter from "./AppRouter";
 
 const ProfileRouter = () => {
   const {pathname} =useLocation()
+  
+  const token = localStorage.getItem("tkn");
+  const [user, setUser] = useState({});
 
+  useEffect(() => {
+    const responseUser = async () => {
+      try {
+        const { data } = await fetchData.get("/api/v1/user/me", {
+          headers: {
+            Authorization: `JWT ${token}`,
+          },
+        });
+        const { user } = data;
+        setUser(user);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    responseUser();
+  }, [token]);
+  console.log(user);
   return (
     
     <Router>
       <main>
           <Switch>
             <Route exact path={`${pathname}/welcome`} >
-              <Welcome pathname={pathname} />
+              <Welcome user={user} pathname={pathname} />
             </Route>
             <Route exact path={`/profile/check`} >
-              <CheckInfo pathname={pathname}/>
+              <CheckInfo user={user} pathname={pathname}/>
             </Route>
             <Route exact path={`/profile/change`} >
-              <ChangeInfo pathname={pathname}/>
+              <ChangeInfo user={user} pathname={pathname}/>
             </Route>
             <Route exact path={`/profile/favorites`} >
               <Favorites pathname={pathname}/>
