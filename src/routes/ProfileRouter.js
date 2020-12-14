@@ -35,7 +35,6 @@ const ProfileRouter = () => {
     };
     responseUser();
   }, [token]);
-  console.log(user);
   return (
     
     <Router>
@@ -48,7 +47,7 @@ const ProfileRouter = () => {
               <CheckInfo user={user} pathname={pathname}/>
             </Route>
             <Route exact path={`/profile/change`} >
-              <ChangeInfo user={user} pathname={pathname}/>
+              <ChangeInfo setUser={setUser} user={user} token={token} pathname={pathname}/>
             </Route>
             <Route exact path={`/profile/favorites`} >
               <Favorites pathname={pathname}/>

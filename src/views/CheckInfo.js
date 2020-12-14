@@ -7,7 +7,7 @@ export const CheckInfo = ({ pathname, user }) => {
   const { first_name, last_name, email, gender, birth_date } = user;
   const birth = new Date(birth_date);
   const parsedBirth = birth.toUTCString().slice(0,16);
-
+  console.log(process.env.REACT_APP_PRUEBA);
   return (
     <div>
       <SideBar active={"checkinfo"} pathname={pathname} />
