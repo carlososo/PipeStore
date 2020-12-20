@@ -5,17 +5,23 @@ import RemoveIcon from '@material-ui/icons/Remove';
 import { UserContext } from "../../context/UserContext";
 
 
-const InputCounter = () => {
+const InputCounter = ({selectedProduct}) => {
   const {isLogged} =useContext(UserContext);
-  console.log(isLogged)
   const { counter, setCounter, increment, decrement } = useCounter(1);
+  const CartProduct ={
+    ...selectedProduct,
+    counter,
+    priceXquantity: selectedProduct.price *counter,
+    
+  }
+   
   return (
     <div className="container ">
       <form
         className="form-inline"
         onSubmit={(e) => {
           e.preventDefault();
-          console.log(counter);
+          console.log(CartProduct);
         }}
       >
         <div className="form-group div-counter input-flex col-12">

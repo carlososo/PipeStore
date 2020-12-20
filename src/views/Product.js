@@ -12,7 +12,6 @@ const Product = () => {
   const {productId} =useParams()
   const [selectedProduct, setSelectedProduct] = useState({});
   
-  
   useEffect(() => {
     const handleSelectedProduct = async () => {
       const { data } = await fetchData.get(
@@ -46,7 +45,7 @@ const Product = () => {
               <TitleHeart selectedProduct={selectedProduct}/>
             </div>
             <div className="container-custom mb-5">
-                <InputCounter />
+                <InputCounter selectedProduct={selectedProduct}/>
             </div>
             <div className="container-custom">
                 <h4>{selectedProduct.brand}</h4>
