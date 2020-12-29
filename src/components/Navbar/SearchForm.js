@@ -1,5 +1,4 @@
-import React, { useContext } from "react";
-import { ProductContext } from "../../context/ProductContex";
+import React from "react";
 import SearchIcon from "@material-ui/icons/Search";
 import "../../index.scss";
 import { useForm } from "../../hooks/useForm";
@@ -9,7 +8,7 @@ import { useHistory } from "react-router-dom";
 
 export const SearchForm = () => {
   const history= useHistory();
-  const { setProduct } = useContext(ProductContext);
+  
   const [value, handleInputChange, reset] = useForm({
     product: ''
   });
@@ -20,7 +19,7 @@ export const SearchForm = () => {
   const handleSubmit = (e) => {
     if(product?.length>0){
       e.preventDefault();
-      setProduct(value);
+      
       history.push(`/?q=${product}`)
       reset();
 

@@ -5,9 +5,7 @@ import AppRouter from './routes/AppRouter';
 
 
 const AppContext =()=>{
-    const [product, setProduct] = useState({
-        product:''
-    });
+    const [product, setProduct] = useState([]);
 
     const [isLogged, setisLogged] =useState()
 

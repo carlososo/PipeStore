@@ -1,14 +1,17 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import useCounter from "../../hooks/useCounter";
 import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
 import { UserContext } from "../../context/UserContext";
+import { ProductContext } from "../../context/ProductContex";
 
 
 const InputCounter = ({selectedProduct}) => {
+  console.log(selectedProduct);
+  const {product, setProduct } = useContext(ProductContext);
   const {isLogged} =useContext(UserContext);
   const { counter, setCounter, increment, decrement } = useCounter(1);
-  const CartProduct ={
+    const CartProduct ={
     ...selectedProduct,
     counter,
     priceXquantity: selectedProduct.price *counter,
@@ -21,7 +24,9 @@ const InputCounter = ({selectedProduct}) => {
         className="form-inline"
         onSubmit={(e) => {
           e.preventDefault();
-          console.log(CartProduct);
+          setProduct([product,CartProduct])
+          console.log(product);
+          console.log(typeof product);
         }}
       >
         <div className="form-group div-counter input-flex col-12">
