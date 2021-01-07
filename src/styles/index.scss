@@ -10,17 +10,25 @@ $color_blue: #312450;
 $color_blue_whiteish: #e9e7eb;
 $color_lightGray: #ECECEC;
 
-*{
-    font-family: 'Lato', sans-serif !important;
+html{
+    
+    font-size: 62.5% !important;
+    box-sizing: border-box;
 }
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
 img{
     max-width: 100%;
 }
-p{
-    font-size: 1.2rem !important;
-}
+
 body{
+    font-family: 'Lato', sans-serif !important;
     background-color: $color_blue_whiteish !important;
+    font-size: 1.6rem !important;
 }
 
 

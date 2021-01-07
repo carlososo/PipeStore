@@ -4,10 +4,23 @@ $color_green:#A0CC36;
 .__Below_container{
     background-color: $color_blue;
     color:$color_white;
-    &:hover{
-        color: $color_green;
-    }
     .__Below_list{
         display: flex;
+        list-style-type: none;
+        justify-content: space-between;
+        height: 5rem;
+        .__Below_list-item{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &:hover{
+                background-color: lighten($color: $color_blue, $amount: 7);
+                cursor: pointer;
+            }
+        }
+        
     }
+
 }
