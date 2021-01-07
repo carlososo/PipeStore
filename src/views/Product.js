@@ -6,6 +6,7 @@ import TitleHeart from "../components/TitleIcon/";
 import Stepper from '../components/Stepper'
 import { useParams } from "react-router-dom";
 import NavBar from "../components/Navbar";
+import { BelowNavBar } from "../components/BelowNavBar/BelowNavBar";
 
 const Product = () => {
   
@@ -26,6 +27,7 @@ const Product = () => {
   return (
     <div>
       <NavBar toProduct="/product" />
+      <BelowNavBar/>
     
     <div className="container-custom ">
       <div className="mb-5">

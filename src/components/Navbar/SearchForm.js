@@ -34,7 +34,7 @@ export const SearchForm = () => {
     <form className="form-inline form-width " onSubmit={handleSubmit}>
       <div className="bg-custom-light form-group col-lg-12 rounded">
         <input
-          className="form-control col-11  custom-bg-light borders-right input-custom"
+          className="form-control col-11 "
           type="search"
           placeholder="Search"
           autoComplete="off"

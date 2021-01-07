@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { BelowNavBar } from "../components/BelowNavBar/BelowNavBar";
 import NavBar from "../components/Navbar";
 import { useForm } from "../hooks/useForm";
 import usePost from "../hooks/usePost";
@@ -43,6 +44,7 @@ const Login = () => {
   return (
     <>
     <NavBar/>
+    <BelowNavBar/>
     <div className="container">
       <h1 className=" text-center my-5">Log In</h1>
       <div className="container">

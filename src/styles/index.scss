@@ -35,16 +35,9 @@ body{
 .custom-bg-light{
     background-color: $color_white;
 }
-.borders-right{
-    border-top-right-radius: 0 !important;
-    border-bottom-right-radius: 0 !important;
-}
 
-.borders-left{
 
-    border-top-left-radius: 0 !important;
-    border-bottom-left-radius: 0 !important;
-}
+
 .container-custom{
     margin: 0 auto;
     max-width: 75%;
