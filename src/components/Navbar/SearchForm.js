@@ -1,6 +1,6 @@
 import React from "react";
 import SearchIcon from "@material-ui/icons/Search";
-import "../../index.scss";
+import "../../styles/index.scss";
 import { useForm } from "../../hooks/useForm";
 import { useHistory } from "react-router-dom";
 

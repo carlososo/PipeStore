@@ -1,0 +1,13 @@
+$color_blue: #312450;
+$color_white:#F8F9FA;
+$color_green:#A0CC36;
+.__Below_container{
+    background-color: $color_blue;
+    color:$color_white;
+    &:hover{
+        color: $color_green;
+    }
+    .__Below_list{
+        display: flex;
+    }
+}

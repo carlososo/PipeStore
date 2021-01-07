@@ -6,7 +6,8 @@ import NavBar from "../components/Navbar";
 import ContentLoader from "../components/ContentLoader";
 import { useLocation } from "react-router-dom";
 
-import "../index.scss";
+import "../styles/index.scss";
+import { BelowNavBar } from "../components/BelowNavBar/BelowNavBar";
 
 const Home = () => {
   const location = useLocation();
@@ -31,6 +32,7 @@ const Home = () => {
   return (
     <div>
       <NavBar />
+      <BelowNavBar/>
       
         <ContentLoader search={search} products={products}/>
       )
