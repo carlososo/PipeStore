@@ -9,7 +9,7 @@ $color_green:#A0CC36;
         display: flex;
         list-style-type: none;
         justify-content: space-between;
-        height: 5rem;
+        height: 4.7rem;
         
         .__Below_list-item{
             height: 100%;
@@ -31,13 +31,13 @@ $color_green:#A0CC36;
             .__dropdown_menu{
                 position: absolute;
                 border-radius: 10px;
-                z-index: 1;
-                top:104px;
+                z-index: 99;
+                top:95px;
                 width:220px;
                 background-color: $color_blue;
                 padding:1rem;
                 overflow: auto;
-                height: 319px;
+                height: 330px;
                 user-select: none;
             }
             .__dropdown_item{

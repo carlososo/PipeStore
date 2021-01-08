@@ -6,7 +6,7 @@ import TitleHeart from "../components/TitleIcon/";
 import Stepper from '../components/Stepper'
 import { useParams } from "react-router-dom";
 import NavBar from "../components/Navbar";
-import { BelowNavBar } from "../components/BelowNavBar/BelowNavBar";
+import BelowNavBar from "../components/BelowNavBar";
 
 const Product = () => {
   
@@ -25,7 +25,7 @@ const Product = () => {
 
   
   return (
-    <div>
+    <div className="animate__animated animate__fadeIn">
       <NavBar toProduct="/product" />
       <BelowNavBar/>
     

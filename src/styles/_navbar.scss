@@ -1,18 +1,29 @@
 $color_white:#F8F9FA;
+
+.__container_Navbar{
+    display: flex !important;
+    justify-content: space-between !important;
+}
+
 .bg-custom-blue{
     background-color: $color_white;
     border-bottom: 1px solid gray;
     color: #F8F9FA !important;
     
 }
+.__search_input_container{
+    display: flex;
+    width: 100%;
+    align-content: center;
 
-.borders-right{
-    border-top-right-radius: 0 !important;
-    border-bottom-right-radius: 0 !important;
-}
-
-.borders-left{
-
-    border-top-left-radius: 0 !important;
-    border-bottom-left-radius: 0 !important;
+    .__search_input{
+        border: none;
+        border-bottom: 1px solid lightgray;
+        line-height: 3px;
+        font-size: 1.2rem;
+        height: 3.7rem;
+        width: 90%;
+        max-width: 90%;
+        outline: none;
+    }
 }

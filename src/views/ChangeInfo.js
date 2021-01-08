@@ -30,9 +30,9 @@ export const ChangeInfo = ({setUser, user, pathname, token }) => {
   };
 
   return (
-    <div>
+    <div className="">
       <SideBar active="changeinfo" pathname={pathname} />
-      <section className="display-main">
+      <section className="display-main animate__animated animate__fadeIn">
         <h1>Change Info</h1>
         <form className="ui form" onSubmit={HandleSubmit}>
           <h4 className="ui dividing header">User Information</h4>

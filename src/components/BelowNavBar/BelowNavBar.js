@@ -3,7 +3,7 @@ import {categories} from '../../utils/categories'
 
 import "../../styles/index.scss";
 
-export const BelowNavBar = () => {
+const BelowNavBar = () => {
     return (
         <div className="__Below_container ">
             <nav className="container-custom __Below_nav">
@@ -11,7 +11,7 @@ export const BelowNavBar = () => {
                 <BelowNavBarItem text="Categories">
                 <DropdownMenu/> 
                 </BelowNavBarItem>
-                <BelowNavBarItem text="Type your Zip Code"/>
+                <BelowNavBarItem text="Your Zip Code"/>
                 <BelowNavBarItem text="#StayHome"/>
                 <BelowNavBarItem text="Our Services"/>
                 <BelowNavBarItem text="Our Stores"/>
@@ -53,10 +53,12 @@ const DropdownMenu =()=>{
     }
     
     return(
-        <div className="__dropdown_menu animate__animated animate__fadeInDown animate__faster">
+        <div className="__dropdown_menu animate__animated animate__fadeInLeft animate__faster">
             {renderCategories(categories)}
             {/* <DropdownItem className="__dropdown_item"> Something</DropdownItem>
             <DropdownItem className="__dropdown_item"> Something Else</DropdownItem> */}
         </div>
     )
 }
+
+export default BelowNavBar

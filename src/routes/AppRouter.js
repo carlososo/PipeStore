@@ -1,11 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-dom";
+import WhatsappButton from "../components/WhatsappButton";
 // import NavBar from "../components/Navbar";
 import Home from "../views/Home";
 import Login from "../views/Login";
 import Product from "../views/Product";
 import Profile from "../views/Profile";
 import Signup from "../views/Signup";
+import Checkout from "../views/Checkout";
 
 const AppRouter = () => {
 
@@ -26,8 +28,10 @@ const AppRouter = () => {
             <Route exact path="/login" component={Login}/>
             <Route exact path="/logout" component={Logout}/>
             <Route exact path="/profile" component={Profile}/>
+            <Route exact path="/checkout" component={Checkout}/>
             <Redirect to="/"/>
         </Switch>
+        <WhatsappButton/>
       </div>
     </Router>
   );

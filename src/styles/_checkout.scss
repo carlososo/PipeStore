@@ -1,0 +1,15 @@
+
+.__checkout_main{
+    height: 79vh;
+    background-image: url("../utils/img/shopping-cart.svg");
+    background-attachment: fixed ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position-y: 90% ;
+    opacity: 0.5;
+
+    .__checkout_span_before{
+        opacity:1;
+        z-index: 1;
+    }
+}

@@ -6,7 +6,7 @@ const Card = ({ products }) => {
   return products.map(({ _id, image, product_name, category, price }, i) => (
     <div key={i} className="col-sm-3">
       <Link style={{ textDecoration: "none" }} to={`/product/${_id}`}>
-        <div className="mb-3 __card__container">
+        <div className="mb-4 __card__container">
           <picture className="__card_image_container"><img
             className="card-img-top"
             src={image || notAvailable}

@@ -7,7 +7,9 @@ import ContentLoader from "../components/ContentLoader";
 import { useLocation } from "react-router-dom";
 
 import "../styles/index.scss";
-import { BelowNavBar } from "../components/BelowNavBar/BelowNavBar";
+import  BelowNavBar from "../components/BelowNavBar/";
+import  {CarouselComponent }from "../components/Carousel";
+import { image1, image2, image3 } from "../utils/img/imageExports";
 
 const Home = () => {
   const location = useLocation();
@@ -30,12 +32,12 @@ const Home = () => {
   }, [q]);
 
   return (
-    <div>
+    <div className="animate__animated animate__fadeIn">
       <NavBar />
       <BelowNavBar/>
+      <CarouselComponent image1={image1} image2={image2} image3={image3}/>
       
         <ContentLoader search={search} products={products}/>
-      )
     </div>
   );
 };

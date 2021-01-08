@@ -36,7 +36,7 @@ const NavBar = () => {
     return (
     <nav className="navbar-expand-md navbar-light bg-custom-blue">
      <div
-        className="collapse navbar-collapse container-custom "
+        className="collapse navbar-collapse container-custom __container_Navbar"
         id="navbarSupportedContent"
       >
         <ul className="navbar-nav mr-5 my-3">

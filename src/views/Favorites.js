@@ -5,8 +5,11 @@ export const Favorites = ({pathname}) => {
     
     console.log(pathname)
     return (
-        <div>
+        < >
             <SideBar active={"favorites"} pathname={pathname} />
-        </div>
+            <section className="display-main text-center animate__animated animate__fadeIn">
+                Favorites
+            </section>
+        </>
     )
 }

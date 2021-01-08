@@ -1,2 +1,2 @@
 import BelowNavBar from './BelowNavBar';
-export default BelowNavBar
+export default BelowNavBar;

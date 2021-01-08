@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { BelowNavBar } from "../components/BelowNavBar/BelowNavBar";
+import  BelowNavBar  from "../components/BelowNavBar";
 import NavBar from "../components/Navbar";
 import { useForm } from "../hooks/useForm";
 import usePost from "../hooks/usePost";
@@ -45,7 +45,7 @@ const Login = () => {
     <>
     <NavBar/>
     <BelowNavBar/>
-    <div className="container">
+    <div className="container animate__animated animate__fadeIn">
       <h1 className=" text-center my-5">Log In</h1>
       <div className="container">
         <form className="ui form huge error" onSubmit={handleSubmit}>

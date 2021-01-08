@@ -9,9 +9,9 @@ export const CheckInfo = ({ pathname, user }) => {
   const parsedBirth = birth.toUTCString().slice(0,16);
   console.log(process.env.REACT_APP_PRUEBA);
   return (
-    <div>
+    <div className="">
       <SideBar active={"checkinfo"} pathname={pathname} />
-      <div className="display-main text-center">
+      <div className="display-main text-center animate__animated animate__fadeIn">
         <h1> Your Info!</h1>
         <div className="info-container">
           <div className="image-left">

@@ -4,6 +4,9 @@
 @import './card';
 @import './navbar';
 @import './Below';
+@import './Buttons';
+@import './carousel';
+@import './checkout';
 $color_white:#F8F9FA;
 $color_green:#A0CC36;
 $color_blue: #312450;
@@ -51,16 +54,8 @@ body{
 .form-width{
     max-width: 100%;
 }
-.boton{
-    color: $color_white;
-    border-bottom-right-radius: 5px;
-    border-top-right-radius: 5px;
-    border: none;
-    padding: 6.5px 1rem;
-}
-.btn-verde{
-    background-color: $color_green;
-}
+
+
 
 .div-counter{
     margin-left: 2rem;
@@ -85,32 +80,14 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-.boton-verde{
-    background-color: $color_green;
-    outline: none;
-    border: none;
-    padding: 0px 40px 2px;
-    margin-bottom: 0px;
-    color: $color_white;
-    font-size: 1.5rem;
-    border-radius: 5px;
-    transition: color 300ms ease;
-    &:hover{
-        color: $color_blue;
-    }
-    &:focus{
-        outline: none;
-        border:none
-    }
-}
 
-
+//Modal  sizing and placing I'm not sure if I need to do a particular scc file for ...
+//this 1 selector so:
 .current-mod{
     position: fixed;
-    top:25% !important;
-    left:25% !important;
+    top:auto !important;
+    left:auto !important;
     max-width: 800px;
-    max-height: 400px;
-    
+    max-height: 290px;
 
 }

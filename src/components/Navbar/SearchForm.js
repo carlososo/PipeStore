@@ -4,6 +4,8 @@ import "../../styles/index.scss";
 import { useForm } from "../../hooks/useForm";
 import { useHistory } from "react-router-dom";
 
+import '../../styles/index.scss'
+
 
 
 export const SearchForm = () => {
@@ -31,10 +33,10 @@ export const SearchForm = () => {
   
   
   return (
-    <form className="form-inline form-width " onSubmit={handleSubmit}>
-      <div className="bg-custom-light form-group col-lg-12 rounded">
+    <form className=" " onSubmit={handleSubmit}>
+      <div className="__search_input_container">
         <input
-          className="form-control col-11 "
+          className=" __search_input"
           type="search"
           placeholder="Search"
           autoComplete="off"
