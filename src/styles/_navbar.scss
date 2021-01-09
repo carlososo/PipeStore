@@ -32,6 +32,9 @@ $color_green:#A0CC36;
 }
 .__navBar_cart_badge_container{
     position:relative;
+    small{
+        margin-right: 5px;
+    }
 
     .__navBar_cart_badge{
         position: absolute;
@@ -42,7 +45,7 @@ $color_green:#A0CC36;
         font-size: 10px;
         width: 15px;
         height: 15px;
-        top:-2px;
-        right:-2px;
+        top:-6px;
+        right:-10px;
     }
 }

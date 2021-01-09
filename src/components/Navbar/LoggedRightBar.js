@@ -15,8 +15,8 @@ const RightBar = ({user, setisLogged}) => {
             className="nav-link "
             to="/profile"
           >
-            <AccountCircleTwoToneIcon title="Login" className="ml-1" />
             <small>{user.first_name}</small>
+            <AccountCircleTwoToneIcon title="Login" className="ml-1" />
           </NavLink>
         </li>
         <li className="nav-item">
@@ -25,8 +25,8 @@ const RightBar = ({user, setisLogged}) => {
             className="nav-link"
             to="/logout"
           >
-            <MeetingRoomTwoToneIcon title="SignUp" className="ml-2" />
             <small>Logout</small>
+            <MeetingRoomTwoToneIcon title="SignUp" className="ml-2" />
           </NavLink>
         </li>
         <li className="nav-item">
@@ -36,10 +36,11 @@ const RightBar = ({user, setisLogged}) => {
             to="/checkout"
           >
           <div className="__navBar_cart_badge_container">
+            <small>Cart</small>
           <ShoppingCartIcon title="Shopping Cart" />
             {product.length>0 &&<span className="__navBar_cart_badge">{product.length}</span>}
           </div>
-            <small>Cart</small>
+            
           </NavLink>
         </li>
       </ul>

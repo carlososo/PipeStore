@@ -13,8 +13,8 @@ const RightBar = () => {
             className="nav-link "
             to="/login"
           >
-            <AccountCircleTwoToneIcon title="Login" className="ml-1" />
             <small>Login</small>
+            <AccountCircleTwoToneIcon title="Login" className="ml-1" />
           </NavLink>
         </li>
         <li className="nav-item">
@@ -23,8 +23,8 @@ const RightBar = () => {
             className="nav-link"
             to="/signup"
           >
-            <MeetingRoomTwoToneIcon title="SignUp" className="ml-2" />
             <small>Signup</small>
+            <MeetingRoomTwoToneIcon title="SignUp" className="ml-2" />
           </NavLink>
         </li>
         <li className="nav-item">
@@ -33,8 +33,8 @@ const RightBar = () => {
             className="nav-link"
             to="/checkout"
           >
-            <ShoppingCartIcon title="Shopping Cart" />
             <small>Cart</small>
+            <ShoppingCartIcon title="Shopping Cart" />
           </NavLink>
         </li>
       </ul>
