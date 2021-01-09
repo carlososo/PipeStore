@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { NavLink } from "react-router-dom";
 import MeetingRoomTwoToneIcon from "@material-ui/icons/MeetingRoomTwoTone";
 import AccountCircleTwoToneIcon from "@material-ui/icons/AccountCircleTwoTone";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import { ProductContext } from '../../context/ProductContex';
 
 const RightBar = ({user, setisLogged}) => {
+  const {product} =useContext(ProductContext)
     return (
         <ul className="navbar-nav ml-5">
         <li className="nav-item " title="Login">
@@ -33,7 +35,10 @@ const RightBar = ({user, setisLogged}) => {
             className="nav-link"
             to="/checkout"
           >
-            <ShoppingCartIcon title="Shopping Cart" />
+          <div className="__navBar_cart_badge_container">
+          <ShoppingCartIcon title="Shopping Cart" />
+            {product.length>0 &&<span className="__navBar_cart_badge">{product.length}</span>}
+          </div>
             <small>Cart</small>
           </NavLink>
         </li>

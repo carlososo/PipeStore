@@ -31,7 +31,7 @@ const NavBar = () => {
       setisLogged(true);
     }else{      setisLogged(false);
     }
-  },[token])
+  },[token, setisLogged])
   
     return (
     <nav className="navbar-expand-md navbar-light bg-custom-blue">

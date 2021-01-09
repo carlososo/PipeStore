@@ -1,4 +1,5 @@
 $color_white:#F8F9FA;
+$color_green:#A0CC36;
 
 .__container_Navbar{
     display: flex !important;
@@ -25,5 +26,23 @@ $color_white:#F8F9FA;
         width: 90%;
         max-width: 90%;
         outline: none;
+    }
+
+   
+}
+.__navBar_cart_badge_container{
+    position:relative;
+
+    .__navBar_cart_badge{
+        position: absolute;
+        background-color: $color_green;
+        color: $color_white;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 10px;
+        width: 15px;
+        height: 15px;
+        top:-2px;
+        right:-2px;
     }
 }
