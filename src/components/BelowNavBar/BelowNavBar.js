@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import {categories} from '../../utils/categories'
 
 import "../../styles/index.scss";
+import ZipCode from '../ZipCode';
 
 const BelowNavBar = () => {
     return (
@@ -11,7 +12,9 @@ const BelowNavBar = () => {
                 <BelowNavBarItem text="Categories">
                 <DropdownMenu/> 
                 </BelowNavBarItem>
-                <BelowNavBarItem text="Your Zip Code"/>
+                <BelowNavBarItem text="Your Zip Code">
+                <ZipCode/>
+                </BelowNavBarItem>
                 <BelowNavBarItem text="#StayHome"/>
                 <BelowNavBarItem text="Our Services"/>
                 <BelowNavBarItem text="Our Stores"/>
