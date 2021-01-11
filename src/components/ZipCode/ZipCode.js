@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 
 const ZipCode =()=>{
-
-    const [open, setOpen] =useState(false);
     const [zipCode, setZipCode] =useState('')
     const handleSubmitZipCode=(e)=>{
         e.preventDefault();
