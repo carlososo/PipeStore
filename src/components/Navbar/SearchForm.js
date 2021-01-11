@@ -1,15 +1,16 @@
-import React, { useContext } from "react";
-import { ProductContext } from "../../context/ProductContex";
+import React from "react";
 import SearchIcon from "@material-ui/icons/Search";
-import "../../index.scss";
+import "../../styles/index.scss";
 import { useForm } from "../../hooks/useForm";
 import { useHistory } from "react-router-dom";
+
+import '../../styles/index.scss'
 
 
 
 export const SearchForm = () => {
   const history= useHistory();
-  const { setProduct } = useContext(ProductContext);
+  
   const [value, handleInputChange, reset] = useForm({
     product: ''
   });
@@ -20,7 +21,7 @@ export const SearchForm = () => {
   const handleSubmit = (e) => {
     if(product?.length>0){
       e.preventDefault();
-      setProduct(value);
+      
       history.push(`/?q=${product}`)
       reset();
 
@@ -32,10 +33,10 @@ export const SearchForm = () => {
   
   
   return (
-    <form className="form-inline form-width " onSubmit={handleSubmit}>
-      <div className="bg-custom-light form-group col-lg-12 rounded">
+    <form className=" " onSubmit={handleSubmit}>
+      <div className="__search_input_container">
         <input
-          className="form-control col-11  custom-bg-light borders-right input-custom"
+          className=" __search_input"
           type="search"
           placeholder="Search"
           autoComplete="off"

@@ -6,7 +6,7 @@ import RightBar from "./RightBar";
 import LoggedRightBar from './LoggedRightBar';
 import { UserContext } from "../../context/UserContext";
 
-import "../../index.scss";
+import "../../styles/index.scss";
 
 const NavBar = () => {
   
@@ -31,12 +31,12 @@ const NavBar = () => {
       setisLogged(true);
     }else{      setisLogged(false);
     }
-  },[token])
+  },[token, setisLogged])
   
     return (
-    <nav className="navbar-expand-md navbar-dark bg-custom-blue mb-5">
+    <nav className="navbar-expand-md navbar-light bg-custom-blue">
      <div
-        className="collapse navbar-collapse container-custom "
+        className="collapse navbar-collapse container-custom __container_Navbar"
         id="navbarSupportedContent"
       >
         <ul className="navbar-nav mr-5 my-3">

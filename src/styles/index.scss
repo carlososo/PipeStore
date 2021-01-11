@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+@import './profile';
+@import './displayMain';
+@import './card';
+@import './navbar';
+@import './Below';
+@import './Buttons';
+@import './carousel';
+@import './checkout';
+$color_white:#F8F9FA;
+$color_green:#A0CC36;
+$color_blue: #312450;
+$color_blue_whiteish: #e9e7eb;
+$color_lightGray: #ECECEC;
+
+html{
+    
+    font-size: 62.5% !important;
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+img{
+    max-width: 100%;
+}
+
+body{
+    font-family: 'Lato', sans-serif !important;
+    background-color: $color_blue_whiteish !important;
+    font-size: 1.6rem !important;
+}
+
+
+.custom-bg-light{
+    background-color: $color_white;
+}
+
+
+
+.container-custom{
+    margin: 0 auto;
+    max-width: 75%;
+}
+
+.card-img-top{
+    max-width: 332px;
+    max-height: 229px;
+}
+
+.form-width{
+    max-width: 100%;
+}
+
+
+
+.div-counter{
+    margin-left: 2rem;
+}
+
+
+.input-flex{
+    display: flex;
+    justify-content: space-around;
+}
+
+.input-counter{
+    text-align: center;   
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+    width: 4rem;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+//Modal  sizing and placing I'm not sure if I need to do a particular scc file for ...
+//this 1 selector so:
+.current-mod{
+    position: fixed;
+    top:auto !important;
+    left:auto !important;
+    max-width: 800px;
+    max-height: 290px;
+
+}
+

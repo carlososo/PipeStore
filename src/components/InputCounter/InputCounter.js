@@ -1,22 +1,36 @@
 import React, { useContext } from "react";
+import { UserContext } from "../../context/UserContext";
+import { ProductContext } from "../../context/ProductContex";
 import useCounter from "../../hooks/useCounter";
+import Swal from 'sweetalert2';
+
 import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
-import { UserContext } from "../../context/UserContext";
 
 
-const InputCounter = () => {
+
+const InputCounter = ({selectedProduct}) => {
+  const {product, setProduct } = useContext(ProductContext);
   const {isLogged} =useContext(UserContext);
-  console.log(isLogged)
   const { counter, setCounter, increment, decrement } = useCounter(1);
+    const CartProduct ={
+    ...selectedProduct,
+    counter,
+    priceXquantity: selectedProduct.price *counter,
+    
+  }
+
+  const handleSubmit =(e)=>{
+    e.preventDefault();
+          setProduct([...product,CartProduct])
+          Swal.fire('Agregado!',`${selectedProduct.product_name} Agregado al carrito`, 'success')
+  }
+   
   return (
     <div className="container ">
       <form
         className="form-inline"
-        onSubmit={(e) => {
-          e.preventDefault();
-          console.log(counter);
-        }}
+        onSubmit={handleSubmit}
       >
         <div className="form-group div-counter input-flex col-12">
           <div className="border border-dark rounded">
@@ -24,6 +38,7 @@ const InputCounter = () => {
               <RemoveIcon/>
             </div>
             <input
+            style={{backgroundColor:'transparent'}}
               type="number"
               value={counter}
               onChange={({ target }) => {
