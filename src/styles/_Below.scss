@@ -12,6 +12,7 @@ $color_green:#A0CC36;
         height: 4.7rem;
         
         .__Below_list-item{
+            position: relative;
             height: 100%;
             width: 100%;
             display: flex;
@@ -32,7 +33,8 @@ $color_green:#A0CC36;
                 position: absolute;
                 border-radius: 10px;
                 z-index: 99;
-                top:95px;
+                top:45px;
+                left: -35px;
                 width:220px;
                 background-color: $color_blue;
                 padding:1rem;
@@ -50,6 +52,25 @@ $color_green:#A0CC36;
                 padding: 0.5rem;
                 &:hover{
                     background-color: lighten($color: $color_green, $amount: 10);
+                }
+            }
+            .__dropdown_zipcode_form{
+                position: absolute;
+                border-radius: 10px;
+                z-index: 99;
+                top: 45px;
+                left:-5px;
+                width: 280px;
+                background-color: $color_blue;
+                padding: 1rem;
+                overflow: auto;
+                height: 130px;
+                display: flex;
+                flex-direction: column;
+                input:not(submit){
+                    border: none;
+                    outline: none;
+                    margin-bottom: 1.5rem;
                 }
             }
         }
