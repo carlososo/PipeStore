@@ -38,13 +38,15 @@ $color_green:#A0CC36;
 
     .__navBar_cart_badge{
         position: absolute;
-        background-color: $color_green;
+        background-color: red;
         color: $color_white;
         border-radius: 50%;
-        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         font-size: 10px;
-        width: 15px;
-        height: 15px;
+        width: 16px;
+        height: 16px;
         top:-6px;
         right:-10px;
     }
