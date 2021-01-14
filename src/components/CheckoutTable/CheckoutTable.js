@@ -45,9 +45,8 @@ const CheckoutTable =({products, setProduct})=>{
               </h4>
             </td>
             <td className="text-center">{product.counter}</td>
+            <td className="text-center">${product.price}</td>
             <td className="text-center">${product.priceXquantity}</td>
-            <td className="text-center">
-            <button onClick={()=>deleteFromProducts(product._id )} className="__checkout_table_button"><EditIcon color={'primary'}/></button></td>
             <td className="text-center">
             <button onClick={()=>deleteFromProducts(product._id, product.product_name)} className="__checkout_table_button"><DeleteIcon color='error'/></button></td>
             
@@ -62,8 +61,8 @@ const CheckoutTable =({products, setProduct})=>{
     <tr>
     <th>Product</th>
     <th>Quanatity</th>
-    <th>Subtotal</th>
-    <th>Edit Product</th>
+    <th>Item Price</th>
+    <th>SubTotal</th>
     <th>Remove Product</th>
   </tr>
   </thead>

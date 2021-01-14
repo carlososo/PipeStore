@@ -83,10 +83,8 @@ export const ChangeInfo = ({setUser, user, pathname, token }) => {
             </div>
             <div className="field">
               <label> Gender</label>
-              <select required name="gender" onChange={handleInputChange}>
-                <option defaultValue={gender} disabled>
-                  Select a Gender
-                </option>
+              <select value={gender} required name="gender" onChange={handleInputChange}>
+                <option value="-" disabled>Select a Gender</option>
                 <option value="M">Male</option>
                 <option value="F">Female</option>
                 <option value="X">Other</option>
