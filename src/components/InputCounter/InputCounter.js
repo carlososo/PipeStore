@@ -22,8 +22,18 @@ const InputCounter = ({selectedProduct}) => {
 
   const handleSubmit =(e)=>{
     e.preventDefault();
-          setProduct([...product,CartProduct])
-          Swal.fire('Agregado!',`${selectedProduct.product_name} Agregado al carrito`, 'success')
+          const isAdded=(!!product.find(item => {return item._id ===CartProduct._id}))
+          if(isAdded){
+            const productEdited=(product.find(item => {return item._id ===CartProduct._id}))
+            productEdited.counter+=CartProduct.counter;
+            productEdited.priceXquantity =productEdited.counter* productEdited.price
+           Swal.fire('Items Added.',`${CartProduct.counter} items added`,'info')
+          
+          }else{
+            setProduct([...product,CartProduct])
+              Swal.fire('Added!',`${selectedProduct.product_name} Added to the Shopping Cart`, 'success')
+          }
+          
   }
    
   return (
