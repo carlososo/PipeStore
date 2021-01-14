@@ -5,6 +5,11 @@ import "../../styles/index.scss";
 import ZipCode from '../ZipCode';
 
 const BelowNavBar = () => {
+    const [zipCode, setZipcode]= useState('')
+    const returnZipCode =(value)=>{
+        setZipcode(value)
+    }
+
     return (
         <div className="__Below_container ">
             <nav className="container-custom __Below_nav">
@@ -12,8 +17,8 @@ const BelowNavBar = () => {
                 <BelowNavBarItem text="Categories">
                 <DropdownMenu/> 
                 </BelowNavBarItem>
-                <BelowNavBarItem text="Your Zip Code">
-                <ZipCode/>
+                <BelowNavBarItem text={zipCode? zipCode: "Your Zip Code"}>
+                <ZipCode returnZipCode={returnZipCode}/>
                 </BelowNavBarItem>
                 <BelowNavBarItem text="#StayHome"/>
                 <BelowNavBarItem text="Our Services"/>
@@ -36,6 +41,9 @@ const BelowNavBarItem =(props)=>{
         </li>
     )
 }
+
+
+
 
 const DropdownMenu =()=>{
 

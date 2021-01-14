@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FavoriteProvider } from './context/FavoriteContext';
 import { ProductContext } from './context/ProductContex';
 import { UserContext } from './context/UserContext';
 import AppRouter from './routes/AppRouter';
@@ -19,7 +20,9 @@ const AppContext =()=>{
                 isLogged,
                 setisLogged
             }}>
+            <FavoriteProvider>
             <AppRouter/>
+            </FavoriteProvider>
             </UserContext.Provider>
         </ProductContext.Provider>
     )

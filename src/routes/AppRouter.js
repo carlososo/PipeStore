@@ -13,6 +13,7 @@ const AppRouter = () => {
 
   const Logout=()=>{
     localStorage.removeItem("tkn");
+    localStorage.removeItem("favorites");
     return <Redirect to="/"/>
   }
 
