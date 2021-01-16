@@ -1,7 +1,6 @@
 import React from 'react';
 import Swal from 'sweetalert2';
 import {notAvailable} from '../../utils/img/imageExports';
-import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 
 const CheckoutTable =({products, setProduct})=>{
